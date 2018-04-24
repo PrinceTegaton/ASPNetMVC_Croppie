@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Prince Tegaton" />
+    <title>ASP.NET MVC Croppie Sample</title>
+    <link href="~/Scripts/croppie/croppie.css" rel="stylesheet" />
+    <style>
+        .display-none {
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <h3>Select photo to upload</h3>
+            <p>
+                <img id="avatarsample" src="~/Avatars/avatar-default.png" />
+            </p>
+            <p>
+                <button id="btn_startavatarupload">Browse</button>
+                <button disabled>Use from my photos</button>
+                <input type="file" id="avatar_filebrowser" class="display-none" accept="image/*" />
+                <input id="UserID" type="text" value="@Guid.NewGuid().ToString()" placeholder="UserID" />
+            </p>
+        </div>
+        <hr />
+        <div class="avatar-pre-select">
+        </div>
+        <img id="cropper" />
+        <div id="controlbar" class="form-group text-center display-none">
+            <div class="btn-toolbar d-block">
+                <div class="btn-group mr-3">
+                    <button id="btn_previewavatar" class="btn btn-secondary">Preview</button>
+                    <button id="btn_saveavatar" class="btn btn-primary display-none">Upload Photo</button>
+                    <button class="btn btn-secondary" data-rotate-avatar="-90">Rotate left</button>
+                    <button class="btn btn-secondary" data-rotate-avatar="90">Rotate right</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/croppie/croppie.min.js"></script>
+    <script src="~/Scripts/avatarupload.js"></script>
+</body>
+</html>
